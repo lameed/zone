@@ -1,0 +1,33 @@
+<h1>Listing love_songs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Type</th>
+      <th>Language</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @love_songs.each do |love_song| %>
+      <tr>
+        <td><%= love_song.number %></td>
+        <td><%= love_song.title %></td>
+        <td><%= love_song.artist %></td>
+        <td><%= love_song.type %></td>
+        <td><%= love_song.language %></td>
+        <td><%= link_to 'Show', love_song %></td>
+        <td><%= link_to 'Edit', edit_love_song_path(love_song) %></td>
+        <td><%= link_to 'Destroy', love_song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Love song', new_love_song_path %>

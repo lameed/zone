@@ -1,0 +1,34 @@
+<h1>All Musics</h1>
+
+<table class="large-12 columns">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Category</th>
+      <th>Language</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @musics.each do |music| %>
+      <tr>
+        <td><%= music.number %></td>
+        <td><%= music.title %></td>
+        <td><%= music.artist %></td>
+        <td><%= music.category %></td>
+        <td><%= music.language %></td>
+        <td><%= link_to 'Download', '#' %></td>
+        <!-- <td><%= link_to 'Show', music %></td>
+        <td><%= link_to 'Edit', edit_music_path(music) %></td>
+        <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Music', new_music_path %>
